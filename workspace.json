@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "projects": {
+    "dogz": {
+      "root": "apps/dogz",
+      "sourceRoot": "apps/dogz/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/dogz",
+            "index": "apps/dogz/src/index.html",
+            "main": "apps/dogz/src/main.ts",
+            "polyfills": "apps/dogz/src/polyfills.ts",
+            "tsConfig": "apps/dogz/tsconfig.app.json",
+            "assets": ["apps/dogz/src/favicon.ico", "apps/dogz/src/assets"],
+            "styles": ["apps/dogz/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dogz/src/environments/environment.ts",
+                  "with": "apps/dogz/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "dogz:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "dogz:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/dogz/tsconfig.app.json",
+              "apps/dogz/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/dogz/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/dogz/jest.config.js",
+            "tsConfig": "apps/dogz/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/dogz/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "dogz-e2e": {
+      "root": "apps/dogz-e2e",
+      "sourceRoot": "apps/dogz-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dogz-e2e/cypress.json",
+            "tsConfig": "apps/dogz-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dogz:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dogz:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/dogz-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/dogz-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/web"
+  },
+  "defaultProject": "dogz"
+}
