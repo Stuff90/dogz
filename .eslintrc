@@ -19,14 +19,13 @@
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-parameter-properties": "off",
+    "@typescript-eslint/interface-name-prefix": { "prefixWithI": "always" },
     "@nrwl/nx/enforce-module-boundaries": [
       "error",
       {
         "enforceBuildableLibDependency": true,
         "allow": [],
-        "depConstraints": [
-          { "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }
-        ]
+        "depConstraints": [{ "sourceTag": "*", "onlyDependOnLibsWithTags": ["*"] }]
       }
     ]
   },

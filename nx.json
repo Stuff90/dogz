@@ -28,6 +28,12 @@
     "dogz-e2e": {
       "tags": [],
       "implicitDependencies": ["dogz"]
+    },
+    "api": {
+      "tags": []
+    },
+    "dogz-entity": {
+      "tags": []
     }
   }
 }
