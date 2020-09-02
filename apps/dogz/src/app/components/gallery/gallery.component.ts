@@ -2,10 +2,10 @@ import { DogzModel } from '@dott/dogz-entity';
 import { slice, splitEvery } from 'ramda';
 import { asyncScheduler, scheduled, Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-import { dogzStore } from '../services/store/dogz.store';
+import { dogzStore } from '../../services/store/dogz.store';
+import { GalleryRowElement } from './../../gallery-row';
 import './../gallery-filter';
 import './../gallery-row';
-import { GalleryRowElement } from './../gallery-row';
 import './gallery.component.scss';
 
 export class GalleryElement extends HTMLElement {

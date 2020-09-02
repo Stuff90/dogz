@@ -3,9 +3,9 @@ import { slice } from 'ramda';
 import { asyncScheduler, scheduled } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { GalleryRowElement } from '../gallery-row';
+import { dogzStore } from './../../services/store/dogz.store';
 import './../gallery-row';
 import './../logo';
-import { dogzStore } from './../services/store/dogz.store';
 import './header.component.scss';
 
 export class HeaderElement extends HTMLElement {
