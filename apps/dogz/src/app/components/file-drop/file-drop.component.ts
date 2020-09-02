@@ -1,6 +1,6 @@
 import '@material/mwc-button';
-import { dogzApiService } from '../services/api';
-import { dogzStore } from '../services/store/dogz.store';
+import { dogzApiService } from '../../services/api';
+import { dogzStore } from '../../services/store/dogz.store';
 import './file-drop.component.scss';
 
 interface HTMLInputEvent extends Event {

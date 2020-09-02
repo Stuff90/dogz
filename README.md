@@ -6,7 +6,13 @@ In `apps/api/src/environments/environment.ts`
 
 Add the correct AWS setup variables.
 
-`$ npm run start`
+Start the server:
+
+`$ npm run nx -- serve api`
+
+On an other terminal, start the app
+
+`$ npm run nx -- serve dogz`
 
 Go to you favorite browser: `http://localhost:4200/`
 

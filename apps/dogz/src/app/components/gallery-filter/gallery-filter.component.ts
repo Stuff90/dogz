@@ -3,7 +3,7 @@ import { ListItem } from '@material/mwc-list/mwc-list-item';
 import '@material/mwc-select';
 import { Subject } from 'rxjs';
 import { startWith, takeUntil, withLatestFrom } from 'rxjs/operators';
-import { breedStore } from '../services/store/breed.store';
+import { breedStore } from '../../services/store/breed.store';
 import './gallery-filter.component.scss';
 
 export class GalleryFilterElement extends HTMLElement {

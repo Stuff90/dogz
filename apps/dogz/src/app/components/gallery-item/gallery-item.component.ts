@@ -4,7 +4,7 @@ import '@material/mwc-list/mwc-list-item';
 import { ListItem } from '@material/mwc-list/mwc-list-item';
 import { asyncScheduler, scheduled, Subject } from 'rxjs';
 import { map, startWith, takeUntil } from 'rxjs/operators';
-import { breedStore } from '../services/store/breed.store';
+import { breedStore } from '../../services/store/breed.store';
 import './gallery-item.component.scss';
 
 export class GalleryItemElement extends HTMLElement {
